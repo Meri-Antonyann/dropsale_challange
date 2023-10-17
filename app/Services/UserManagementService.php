@@ -8,9 +8,9 @@ use Illuminate\Support\Facades\DB;
 class UserManagementService{
     public function updateOrInsertUsersData($request){
         $handeledUsers = json_decode($request->users, true);
+        $currentCountOfUsers = User::count(); 
 
         $data = collect();
-        $currentCountOfUsers = User::count(); 
 
         foreach ($handeledUsers as $value) {
             $data->push([
@@ -31,9 +31,9 @@ class UserManagementService{
         $newAddedUsersCount = $total - $currentCountOfUsers;
 
         $result = [
-            'updated' => count($handeledUsers) - $newAddedUsersCount ,
-            'created' => $newAddedUsersCount ,
             'total' => $total,
+            'updated' => $total ?  count($handeledUsers) - $newAddedUsersCount : 0,
+            'created' => $newAddedUsersCount ,
         ];
 
         return $result;

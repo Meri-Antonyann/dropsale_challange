@@ -1,20 +1,20 @@
 <template>
      <div class="card text-center">
-        <div class="card-body w-50 d-flex justify-content-center align-items-center">
+        <div class="card-body mx-auto my-auto w-50 d-flex justify-content-center align-items-center">
             <div>
-                <button class="btn btn-primary" @click="importUsers">Import Users</button>
+                <button class="btn btn-success" @click="importUsers">Import Users</button>
             </div>
              <div class="ml-4 d-flex">
-                <p class="font-weight-bold mr-2">Total:</p>
-                <p>{{ usersCountData.total ?? '' }}</p>
+                <p>Total:</p>
+                <p class="font-weight-bold ml-2">{{ usersCountData.total ?? '' }}</p>
             </div>
             <div class="ml-4 d-flex">
-                <p class="font-weight-bold mr-2">Added</p>
-                <p>{{ usersCountData.created ?? '' }}</p>
+                <p>Added</p>
+                <p class="font-weight-bold ml-2">{{ usersCountData.created ?? '' }}</p>
             </div>
             <div class="ml-4 d-flex">
-                <p class="font-weight-bold mr-2">Updated</p>
-                <p>{{ usersCountData.updated ?? '' }}</p>
+                <p>Updated</p>
+                <p class="font-weight-bold ml-2">{{ usersCountData.updated ?? '' }}</p>
             </div>
         </div>
     </div>
